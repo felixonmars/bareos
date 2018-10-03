@@ -119,7 +119,6 @@ BuildRequires: libtirpc-devel
 %define systemd_support 1
 %endif
 
-%if 0%{?rhel_version} >= 700 || 0%{?centos_version} >= 700
 %define glusterfs 1
 %define droplet 1
 %define systemd_support 1
@@ -198,7 +197,13 @@ BuildRequires: mtx
 %if 0%{?suse_version}
 BuildRequires: libqt5-qtbase-devel
 %else
+
+%if 0%{?centos_version} == 600 || 0%{?rhel_version} <= 700
+BuildRequires: libqt4-devel
+%else
 BuildRequires: qt5-qtbase-devel
+%endif
+
 %endif
 %endif
 
