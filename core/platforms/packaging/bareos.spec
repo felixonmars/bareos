@@ -119,6 +119,7 @@ BuildRequires: libtirpc-devel
 %define systemd_support 1
 %endif
 
+%if 0%{?rhel_version} >= 700 || 0%{?centos_version} >= 700
 %define glusterfs 1
 %define droplet 1
 %define systemd_support 1
